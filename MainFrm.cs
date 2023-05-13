@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -14,9 +15,15 @@ namespace ATextToVoice
 {
     public partial class MainFrm : Form
     {
+
         public MainFrm()
         {
             InitializeComponent();
+        }
+
+        private void MainFrm_Load(object sender, EventArgs e)
+        {
+            cbxVoice.SelectedIndex = 0;
         }
 
         private void btnPathSub_Click(object sender, EventArgs e)
@@ -28,11 +35,45 @@ namespace ATextToVoice
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
-                ReadAndConvertFile(filePath);
+                readAndConvertFile(filePath);
             }
         }
 
-        private void ReadAndConvertFile(string filePath)
+        private void gridSub_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
+        }
+        
+        private void btnAudio_Click(object sender, EventArgs e)
+        {
+            testVoice();
+        }
+
+        private void btnSaveKey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGetVoice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void testVoice()
+        {
+            try
+            {
+                string id = cbxVoice.SelectedItem.ToString().Split('.')[0];
+                mediaPlayer.URL = string.Format("{0}\\voice\\{1}.mp3", Environment.CurrentDirectory, id);
+                mediaPlayer.Ctlcontrols.play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void readAndConvertFile(string filePath)
         {
             using (StreamReader reader = new StreamReader(filePath))
             {
@@ -55,9 +96,9 @@ namespace ATextToVoice
                                     TimeSpan end;
                                     if (TimeSpan.TryParseExact(timeData[1].Trim(), "hh\\:mm\\:ss\\,fff", CultureInfo.InvariantCulture, out end))
                                     {
-                                        line = reader.ReadLine(); 
+                                        line = reader.ReadLine();
                                         string sub = line.Trim();
-                                        line = reader.ReadLine(); 
+                                        line = reader.ReadLine();
                                         string status = "";
                                         VoiceSub voiceSub = new VoiceSub(id, sub, start, end, status);
                                         VoiceSub.listVoiceSub.Add(voiceSub);
@@ -70,13 +111,6 @@ namespace ATextToVoice
             }
             voiceSubBindingSource.DataSource = null;
             voiceSubBindingSource.DataSource = VoiceSub.listVoiceSub;
-            gridSub.Refresh();
-            gridSub.Update();
-        }
-
-        private void gridSub_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            
         }
     }
 }

@@ -41,12 +41,11 @@ namespace ATextToVoice
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuFormResizer1 = new Bunifu.UI.WinForms.BunifuFormResizer(this.components);
             this.bunifuFormDrag1 = new Bunifu.UI.WinForms.BunifuFormDrag();
             this.bunifuFormControlBox1 = new Bunifu.UI.WinForms.BunifuFormControlBox();
@@ -54,7 +53,7 @@ namespace ATextToVoice
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
             this.btnSaveKey = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuProgressBar1 = new Bunifu.UI.WinForms.BunifuProgressBar();
+            this.prbProcess = new Bunifu.UI.WinForms.BunifuProgressBar();
             this.btnGetVoice = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.cbxVoice = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -63,24 +62,30 @@ namespace ATextToVoice
             this.btnPathSub = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtPathSub = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.gridSub = new ns1.SiticoneDataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.audio = new System.Windows.Forms.DataGridViewImageColumn();
-            this.voiceSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
             this.mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnAudio = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.gridSub = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.voice = new System.Windows.Forms.DataGridViewImageColumn();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.voiceSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuPanel1.SuspendLayout();
             this.bunifuPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSub)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voiceSubBindingSource)).BeginInit();
             this.bunifuPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSub)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voiceSubBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuFormResizer1
@@ -201,11 +206,11 @@ namespace ATextToVoice
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.Location = new System.Drawing.Point(12, 12);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(142, 18);
+            this.bunifuLabel1.Size = new System.Drawing.Size(123, 18);
             this.bunifuLabel1.TabIndex = 0;
             this.bunifuLabel1.Text = "Auto Sub To Voice";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -220,7 +225,7 @@ namespace ATextToVoice
             this.bunifuPanel2.BorderRadius = 5;
             this.bunifuPanel2.BorderThickness = 1;
             this.bunifuPanel2.Controls.Add(this.btnSaveKey);
-            this.bunifuPanel2.Controls.Add(this.bunifuProgressBar1);
+            this.bunifuPanel2.Controls.Add(this.prbProcess);
             this.bunifuPanel2.Controls.Add(this.btnGetVoice);
             this.bunifuPanel2.Controls.Add(this.cbxVoice);
             this.bunifuPanel2.Controls.Add(this.bunifuLabel4);
@@ -327,31 +332,31 @@ namespace ATextToVoice
             this.btnSaveKey.UseDefaultRadiusAndThickness = true;
             this.btnSaveKey.Click += new System.EventHandler(this.btnSaveKey_Click);
             // 
-            // bunifuProgressBar1
+            // prbProcess
             // 
-            this.bunifuProgressBar1.AllowAnimations = false;
-            this.bunifuProgressBar1.Animation = 0;
-            this.bunifuProgressBar1.AnimationSpeed = 220;
-            this.bunifuProgressBar1.AnimationStep = 10;
-            this.bunifuProgressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.bunifuProgressBar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuProgressBar1.BackgroundImage")));
-            this.bunifuProgressBar1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.bunifuProgressBar1.BorderRadius = 9;
-            this.bunifuProgressBar1.BorderThickness = 1;
-            this.bunifuProgressBar1.Location = new System.Drawing.Point(99, 149);
-            this.bunifuProgressBar1.Maximum = 100;
-            this.bunifuProgressBar1.MaximumValue = 100;
-            this.bunifuProgressBar1.Minimum = 0;
-            this.bunifuProgressBar1.MinimumValue = 0;
-            this.bunifuProgressBar1.Name = "bunifuProgressBar1";
-            this.bunifuProgressBar1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.bunifuProgressBar1.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.bunifuProgressBar1.ProgressColorLeft = System.Drawing.Color.DodgerBlue;
-            this.bunifuProgressBar1.ProgressColorRight = System.Drawing.Color.DodgerBlue;
-            this.bunifuProgressBar1.Size = new System.Drawing.Size(364, 27);
-            this.bunifuProgressBar1.TabIndex = 9;
-            this.bunifuProgressBar1.Value = 50;
-            this.bunifuProgressBar1.ValueByTransition = 50;
+            this.prbProcess.AllowAnimations = false;
+            this.prbProcess.Animation = 0;
+            this.prbProcess.AnimationSpeed = 220;
+            this.prbProcess.AnimationStep = 10;
+            this.prbProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.prbProcess.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("prbProcess.BackgroundImage")));
+            this.prbProcess.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.prbProcess.BorderRadius = 9;
+            this.prbProcess.BorderThickness = 1;
+            this.prbProcess.Location = new System.Drawing.Point(99, 149);
+            this.prbProcess.Maximum = 100;
+            this.prbProcess.MaximumValue = 100;
+            this.prbProcess.Minimum = 0;
+            this.prbProcess.MinimumValue = 0;
+            this.prbProcess.Name = "prbProcess";
+            this.prbProcess.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.prbProcess.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.prbProcess.ProgressColorLeft = System.Drawing.Color.DodgerBlue;
+            this.prbProcess.ProgressColorRight = System.Drawing.Color.DodgerBlue;
+            this.prbProcess.Size = new System.Drawing.Size(364, 27);
+            this.prbProcess.TabIndex = 9;
+            this.prbProcess.Value = 0;
+            this.prbProcess.ValueByTransition = 0;
             // 
             // btnGetVoice
             // 
@@ -787,145 +792,29 @@ namespace ATextToVoice
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // gridSub
-            // 
-            this.gridSub.AllowUserToAddRows = false;
-            this.gridSub.AllowUserToDeleteRows = false;
-            this.gridSub.AllowUserToResizeColumns = false;
-            this.gridSub.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gridSub.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridSub.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridSub.AutoGenerateColumns = false;
-            this.gridSub.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridSub.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.gridSub.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridSub.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSub.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridSub.ColumnHeadersHeight = 30;
-            this.gridSub.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.gridSub.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.subDataGridViewTextBoxColumn,
-            this.startDataGridViewTextBoxColumn,
-            this.endDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.audio});
-            this.gridSub.DataSource = this.voiceSubBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridSub.DefaultCellStyle = dataGridViewCellStyle4;
-            this.gridSub.EnableHeadersVisualStyles = false;
-            this.gridSub.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gridSub.Location = new System.Drawing.Point(2, 249);
-            this.gridSub.Name = "gridSub";
-            this.gridSub.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.gridSub.RowHeadersVisible = false;
-            this.gridSub.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.gridSub.RowTemplate.Height = 25;
-            this.gridSub.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridSub.Size = new System.Drawing.Size(1063, 368);
-            this.gridSub.TabIndex = 3;
-            this.gridSub.Theme = ns5.DataGridViewPresetThemes.Default;
-            this.gridSub.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.gridSub.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.gridSub.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.gridSub.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.gridSub.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gridSub.ThemeStyle.BackColor = System.Drawing.Color.DarkGray;
-            this.gridSub.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gridSub.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gridSub.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.gridSub.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridSub.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.gridSub.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.gridSub.ThemeStyle.HeaderStyle.Height = 30;
-            this.gridSub.ThemeStyle.ReadOnly = false;
-            this.gridSub.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.gridSub.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
-            this.gridSub.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridSub.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.gridSub.ThemeStyle.RowsStyle.Height = 25;
-            this.gridSub.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gridSub.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.gridSub.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gridSub_CellFormatting);
-            // 
             // idDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.FillWeight = 60F;
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 60;
             // 
             // subDataGridViewTextBoxColumn
             // 
-            this.subDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.subDataGridViewTextBoxColumn.DataPropertyName = "sub";
-            this.subDataGridViewTextBoxColumn.FillWeight = 83.45177F;
-            this.subDataGridViewTextBoxColumn.HeaderText = "sub";
             this.subDataGridViewTextBoxColumn.Name = "subDataGridViewTextBoxColumn";
-            this.subDataGridViewTextBoxColumn.Width = 400;
             // 
             // startDataGridViewTextBoxColumn
             // 
-            this.startDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.startDataGridViewTextBoxColumn.DataPropertyName = "start";
-            this.startDataGridViewTextBoxColumn.FillWeight = 83.45177F;
-            this.startDataGridViewTextBoxColumn.HeaderText = "start";
             this.startDataGridViewTextBoxColumn.Name = "startDataGridViewTextBoxColumn";
-            this.startDataGridViewTextBoxColumn.Width = 175;
             // 
             // endDataGridViewTextBoxColumn
             // 
-            this.endDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.endDataGridViewTextBoxColumn.DataPropertyName = "end";
-            this.endDataGridViewTextBoxColumn.FillWeight = 83.45177F;
-            this.endDataGridViewTextBoxColumn.HeaderText = "end";
             this.endDataGridViewTextBoxColumn.Name = "endDataGridViewTextBoxColumn";
-            this.endDataGridViewTextBoxColumn.Width = 175;
             // 
             // statusDataGridViewTextBoxColumn
             // 
-            this.statusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.FillWeight = 83.45177F;
-            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 175;
             // 
             // audio
             // 
-            this.audio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            this.audio.DefaultCellStyle = dataGridViewCellStyle3;
-            this.audio.FillWeight = 83.45177F;
-            this.audio.HeaderText = "audio";
-            this.audio.Image = global::ATextToVoice.Properties.Resources.volume;
-            this.audio.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.audio.Name = "audio";
-            this.audio.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // voiceSubBindingSource
-            // 
-            this.voiceSubBindingSource.DataSource = typeof(ATextToVoice.VoiceSub);
             // 
             // bunifuDragControl1
             // 
@@ -1050,15 +939,137 @@ namespace ATextToVoice
             this.btnAudio.UseDefaultRadiusAndThickness = true;
             this.btnAudio.Click += new System.EventHandler(this.btnAudio_Click);
             // 
+            // gridSub
+            // 
+            this.gridSub.AllowCustomTheming = false;
+            this.gridSub.AllowUserToAddRows = false;
+            this.gridSub.AllowUserToDeleteRows = false;
+            this.gridSub.AllowUserToResizeColumns = false;
+            this.gridSub.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.gridSub.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridSub.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridSub.AutoGenerateColumns = false;
+            this.gridSub.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridSub.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridSub.ColumnHeadersHeight = 40;
+            this.gridSub.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.subDataGridViewTextBoxColumn1,
+            this.startDataGridViewTextBoxColumn1,
+            this.endDataGridViewTextBoxColumn1,
+            this.statusDataGridViewTextBoxColumn1,
+            this.voice});
+            this.gridSub.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.gridSub.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridSub.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.gridSub.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
+            this.gridSub.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gridSub.CurrentTheme.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.gridSub.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.gridSub.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.gridSub.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.gridSub.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gridSub.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.gridSub.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gridSub.CurrentTheme.Name = null;
+            this.gridSub.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.gridSub.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridSub.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.gridSub.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
+            this.gridSub.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gridSub.DataSource = this.voiceSubBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridSub.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gridSub.EnableHeadersVisualStyles = false;
+            this.gridSub.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.gridSub.HeaderBackColor = System.Drawing.Color.DarkSlateGray;
+            this.gridSub.HeaderBgColor = System.Drawing.Color.Empty;
+            this.gridSub.HeaderForeColor = System.Drawing.Color.White;
+            this.gridSub.Location = new System.Drawing.Point(0, 249);
+            this.gridSub.Name = "gridSub";
+            this.gridSub.RowHeadersVisible = false;
+            this.gridSub.RowTemplate.Height = 40;
+            this.gridSub.RowTemplate.ReadOnly = true;
+            this.gridSub.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gridSub.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridSub.Size = new System.Drawing.Size(1064, 369);
+            this.gridSub.TabIndex = 12;
+            this.gridSub.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DarkSlateGray;
+            this.gridSub.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSub_CellClick);
+            // 
+            // voice
+            // 
+            this.voice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.voice.HeaderText = "voice";
+            this.voice.Image = global::ATextToVoice.Properties.Resources.volume;
+            this.voice.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.voice.Name = "voice";
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // subDataGridViewTextBoxColumn1
+            // 
+            this.subDataGridViewTextBoxColumn1.DataPropertyName = "sub";
+            this.subDataGridViewTextBoxColumn1.HeaderText = "sub";
+            this.subDataGridViewTextBoxColumn1.Name = "subDataGridViewTextBoxColumn1";
+            this.subDataGridViewTextBoxColumn1.Width = 350;
+            // 
+            // startDataGridViewTextBoxColumn1
+            // 
+            this.startDataGridViewTextBoxColumn1.DataPropertyName = "start";
+            this.startDataGridViewTextBoxColumn1.HeaderText = "start";
+            this.startDataGridViewTextBoxColumn1.Name = "startDataGridViewTextBoxColumn1";
+            this.startDataGridViewTextBoxColumn1.Width = 175;
+            // 
+            // endDataGridViewTextBoxColumn1
+            // 
+            this.endDataGridViewTextBoxColumn1.DataPropertyName = "end";
+            this.endDataGridViewTextBoxColumn1.HeaderText = "end";
+            this.endDataGridViewTextBoxColumn1.Name = "endDataGridViewTextBoxColumn1";
+            this.endDataGridViewTextBoxColumn1.Width = 175;
+            // 
+            // statusDataGridViewTextBoxColumn1
+            // 
+            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn1.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
+            this.statusDataGridViewTextBoxColumn1.Width = 175;
+            // 
+            // voiceSubBindingSource
+            // 
+            this.voiceSubBindingSource.DataSource = typeof(ATextToVoice.VoiceSub);
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1065, 621);
+            this.Controls.Add(this.gridSub);
             this.Controls.Add(this.btnAudio);
             this.Controls.Add(this.bunifuPanel3);
-            this.Controls.Add(this.gridSub);
             this.Controls.Add(this.bunifuPanel2);
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.bunifuFormControlBox1);
@@ -1072,10 +1083,10 @@ namespace ATextToVoice
             this.bunifuPanel1.PerformLayout();
             this.bunifuPanel2.ResumeLayout(false);
             this.bunifuPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSub)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voiceSubBindingSource)).EndInit();
             this.bunifuPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSub)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voiceSubBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1096,9 +1107,7 @@ namespace ATextToVoice
         private Bunifu.UI.WinForms.BunifuTextBox txtApiKey;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnGetVoice;
-        private Bunifu.UI.WinForms.BunifuProgressBar bunifuProgressBar1;
-        private ns1.SiticoneDataGridView gridSub;
-        private System.Windows.Forms.BindingSource voiceSubBindingSource;
+        private Bunifu.UI.WinForms.BunifuProgressBar prbProcess;
         private System.Windows.Forms.DataGridViewTextBoxColumn pathDataGridViewTextBoxColumn;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel3;
@@ -1111,6 +1120,14 @@ namespace ATextToVoice
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn audio;
         private AxWMPLib.AxWindowsMediaPlayer mediaPlayer;
+        private Bunifu.UI.WinForms.BunifuDataGridView gridSub;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn voice;
+        private System.Windows.Forms.BindingSource voiceSubBindingSource;
     }
 }
 

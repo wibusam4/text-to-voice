@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,12 +20,14 @@ namespace ATextToVoice
 
         public MainFrm()
         {
+            CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
         }
 
         private void MainFrm_Load(object sender, EventArgs e)
         {
             cbxVoice.SelectedIndex = 0;
+            loadKey();
         }
 
         private void btnPathSub_Click(object sender, EventArgs e)
@@ -51,12 +55,42 @@ namespace ATextToVoice
 
         private void btnSaveKey_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                saveKey(txtApiKey.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
-        private void btnGetVoice_Click(object sender, EventArgs e)
+        private async void btnGetVoice_Click(object sender, EventArgs e)
         {
+            var progress = new Progress<int>(percent =>
+            {
+                prbProcess.Value = percent;
+            });
+            await convertVoiceSubsToAudio(progress);
+           
+        }
 
+        private void gridSub_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                try
+                {
+                    VoiceSub voiceSub = voiceSubBindingSource.Current as VoiceSub;
+
+                    mediaPlayer.URL = $"{Environment.CurrentDirectory}\\mp3\\{voiceSub.id}.mp3";
+                    mediaPlayer.Ctlcontrols.play();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
 
         private void testVoice()
@@ -108,6 +142,79 @@ namespace ATextToVoice
                         }
                     }
                 }
+            }
+            voiceSubBindingSource.DataSource = null;
+            voiceSubBindingSource.DataSource = VoiceSub.listVoiceSub;
+        }
+
+        private void saveKey(string key)
+        {
+            File.WriteAllText(Environment.CurrentDirectory + "//key//key.txt", key);
+            MessageBox.Show("Lưu thành công", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void loadKey()
+        {
+            string filePath = Environment.CurrentDirectory + "\\key\\key.txt";
+            string directoryPath = Path.GetDirectoryName(filePath);
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+            if (!File.Exists(filePath))
+            {
+                File.Create(filePath).Close();
+                return;
+            }
+            string key = File.ReadAllText(Environment.CurrentDirectory + "\\key\\key.txt");
+            txtApiKey.Text = key;
+        }
+
+        public async Task convertVoiceSubsToAudio(IProgress<int> progress)
+        {
+            int voiceSubCount = VoiceSub.listVoiceSub.Count;
+            foreach (VoiceSub voiceSub in VoiceSub.listVoiceSub)
+            {
+                
+                voiceSub.status = "Loading";
+                string apiUrl = "https://api.fpt.ai/hmi/tts/v5";
+                using (HttpClient client = new HttpClient())
+                {
+                    
+                    client.DefaultRequestHeaders.Add("api-key", txtApiKey.Text);
+                    client.DefaultRequestHeaders.Add("speed", "");
+                    client.DefaultRequestHeaders.Add("voice", "banmai");
+                    HttpResponseMessage response = await client.PostAsync(apiUrl, new StringContent(voiceSub.sub));
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string responseContent = await response.Content.ReadAsStringAsync();
+                        dynamic result = JsonConvert.DeserializeObject(responseContent);
+
+                        string asyncLink = result.async;
+                        using (HttpClient audioClient = new HttpClient())
+                        {
+                            byte[] audioBytes = await audioClient.GetByteArrayAsync(asyncLink);
+
+                            string filePath = $"{Environment.CurrentDirectory}\\mp3\\{voiceSub.id}.mp3"; 
+
+                            using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
+                            {
+                                await fileStream.WriteAsync(audioBytes, 0, audioBytes.Length);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Error at {voiceSub.id}");
+                    }
+                }
+                voiceSub.status = "Thành công";
+                int percent = (int)((voiceSub.id) / (double)voiceSubCount * 100);
+                progress.Report(percent);
+                voiceSubBindingSource.DataSource = null;
+                voiceSubBindingSource.DataSource = VoiceSub.listVoiceSub;
+                await Task.Delay(500);
             }
             voiceSubBindingSource.DataSource = null;
             voiceSubBindingSource.DataSource = VoiceSub.listVoiceSub;

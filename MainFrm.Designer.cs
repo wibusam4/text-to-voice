@@ -30,13 +30,13 @@ namespace ATextToVoice
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -46,6 +46,7 @@ namespace ATextToVoice
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuFormResizer1 = new Bunifu.UI.WinForms.BunifuFormResizer(this.components);
             this.bunifuFormDrag1 = new Bunifu.UI.WinForms.BunifuFormDrag();
             this.bunifuFormControlBox1 = new Bunifu.UI.WinForms.BunifuFormControlBox();
@@ -73,6 +74,7 @@ namespace ATextToVoice
             this.mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnAudio = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.gridSub = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.btnGhepVoice = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.voice = new System.Windows.Forms.DataGridViewImageColumn();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -224,6 +226,7 @@ namespace ATextToVoice
             this.bunifuPanel2.BorderColor = System.Drawing.Color.Black;
             this.bunifuPanel2.BorderRadius = 5;
             this.bunifuPanel2.BorderThickness = 1;
+            this.bunifuPanel2.Controls.Add(this.btnGhepVoice);
             this.bunifuPanel2.Controls.Add(this.btnSaveKey);
             this.bunifuPanel2.Controls.Add(this.prbProcess);
             this.bunifuPanel2.Controls.Add(this.btnGetVoice);
@@ -259,11 +262,11 @@ namespace ATextToVoice
             this.btnSaveKey.ColorContrastOnClick = 45;
             this.btnSaveKey.ColorContrastOnHover = 45;
             this.btnSaveKey.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnSaveKey.CustomizableEdges = borderEdges2;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnSaveKey.CustomizableEdges = borderEdges3;
             this.btnSaveKey.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSaveKey.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSaveKey.DisabledFillColor = System.Drawing.Color.Empty;
@@ -353,7 +356,7 @@ namespace ATextToVoice
             this.prbProcess.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.prbProcess.ProgressColorLeft = System.Drawing.Color.DodgerBlue;
             this.prbProcess.ProgressColorRight = System.Drawing.Color.DodgerBlue;
-            this.prbProcess.Size = new System.Drawing.Size(364, 27);
+            this.prbProcess.Size = new System.Drawing.Size(297, 27);
             this.prbProcess.TabIndex = 9;
             this.prbProcess.Value = 0;
             this.prbProcess.ValueByTransition = 0;
@@ -372,16 +375,16 @@ namespace ATextToVoice
             this.btnGetVoice.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
             this.btnGetVoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGetVoice.BackgroundImage")));
             this.btnGetVoice.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnGetVoice.ButtonText = "Bắt Đầu";
+            this.btnGetVoice.ButtonText = "Get Voice";
             this.btnGetVoice.ButtonTextMarginLeft = 0;
             this.btnGetVoice.ColorContrastOnClick = 45;
             this.btnGetVoice.ColorContrastOnHover = 45;
             this.btnGetVoice.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnGetVoice.CustomizableEdges = borderEdges3;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnGetVoice.CustomizableEdges = borderEdges4;
             this.btnGetVoice.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnGetVoice.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnGetVoice.DisabledFillColor = System.Drawing.Color.Empty;
@@ -626,11 +629,11 @@ namespace ATextToVoice
             this.btnPathSub.ColorContrastOnClick = 45;
             this.btnPathSub.ColorContrastOnHover = 45;
             this.btnPathSub.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnPathSub.CustomizableEdges = borderEdges4;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnPathSub.CustomizableEdges = borderEdges5;
             this.btnPathSub.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPathSub.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnPathSub.DisabledFillColor = System.Drawing.Color.Empty;
@@ -896,7 +899,7 @@ namespace ATextToVoice
             this.btnAudio.IdleIconLeftImage = global::ATextToVoice.Properties.Resources.volume;
             this.btnAudio.IdleIconRightImage = null;
             this.btnAudio.IndicateFocus = false;
-            this.btnAudio.Location = new System.Drawing.Point(401, 149);
+            this.btnAudio.Location = new System.Drawing.Point(402, 149);
             this.btnAudio.Name = "btnAudio";
             this.btnAudio.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAudio.OnDisabledState.BorderRadius = 5;
@@ -930,7 +933,7 @@ namespace ATextToVoice
             this.btnAudio.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnAudio.OnPressedState.IconLeftImage = null;
             this.btnAudio.OnPressedState.IconRightImage = null;
-            this.btnAudio.Size = new System.Drawing.Size(61, 31);
+            this.btnAudio.Size = new System.Drawing.Size(60, 31);
             this.btnAudio.TabIndex = 11;
             this.btnAudio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAudio.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -953,6 +956,9 @@ namespace ATextToVoice
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridSub.AutoGenerateColumns = false;
+            this.gridSub.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridSub.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridSub.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridSub.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -1014,9 +1020,102 @@ namespace ATextToVoice
             this.gridSub.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DarkSlateGray;
             this.gridSub.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSub_CellClick);
             // 
+            // btnGhepVoice
+            // 
+            this.btnGhepVoice.AllowAnimations = true;
+            this.btnGhepVoice.AllowMouseEffects = true;
+            this.btnGhepVoice.AllowToggling = false;
+            this.btnGhepVoice.AnimationSpeed = 200;
+            this.btnGhepVoice.AutoGenerateColors = false;
+            this.btnGhepVoice.AutoRoundBorders = false;
+            this.btnGhepVoice.AutoSizeLeftIcon = true;
+            this.btnGhepVoice.AutoSizeRightIcon = true;
+            this.btnGhepVoice.BackColor = System.Drawing.Color.Transparent;
+            this.btnGhepVoice.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnGhepVoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGhepVoice.BackgroundImage")));
+            this.btnGhepVoice.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnGhepVoice.ButtonText = "Ghép";
+            this.btnGhepVoice.ButtonTextMarginLeft = 0;
+            this.btnGhepVoice.ColorContrastOnClick = 45;
+            this.btnGhepVoice.ColorContrastOnHover = 45;
+            this.btnGhepVoice.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnGhepVoice.CustomizableEdges = borderEdges2;
+            this.btnGhepVoice.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnGhepVoice.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnGhepVoice.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnGhepVoice.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnGhepVoice.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnGhepVoice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnGhepVoice.ForeColor = System.Drawing.Color.Black;
+            this.btnGhepVoice.IconLeft = null;
+            this.btnGhepVoice.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGhepVoice.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnGhepVoice.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnGhepVoice.IconMarginLeft = 11;
+            this.btnGhepVoice.IconPadding = 10;
+            this.btnGhepVoice.IconRight = null;
+            this.btnGhepVoice.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGhepVoice.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnGhepVoice.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnGhepVoice.IconSize = 25;
+            this.btnGhepVoice.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnGhepVoice.IdleBorderRadius = 0;
+            this.btnGhepVoice.IdleBorderThickness = 0;
+            this.btnGhepVoice.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnGhepVoice.IdleIconLeftImage = null;
+            this.btnGhepVoice.IdleIconRightImage = null;
+            this.btnGhepVoice.IndicateFocus = false;
+            this.btnGhepVoice.Location = new System.Drawing.Point(402, 150);
+            this.btnGhepVoice.Name = "btnGhepVoice";
+            this.btnGhepVoice.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnGhepVoice.OnDisabledState.BorderRadius = 5;
+            this.btnGhepVoice.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnGhepVoice.OnDisabledState.BorderThickness = 1;
+            this.btnGhepVoice.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnGhepVoice.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnGhepVoice.OnDisabledState.IconLeftImage = null;
+            this.btnGhepVoice.OnDisabledState.IconRightImage = null;
+            this.btnGhepVoice.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnGhepVoice.onHoverState.BorderRadius = 5;
+            this.btnGhepVoice.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnGhepVoice.onHoverState.BorderThickness = 1;
+            this.btnGhepVoice.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnGhepVoice.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnGhepVoice.onHoverState.IconLeftImage = null;
+            this.btnGhepVoice.onHoverState.IconRightImage = null;
+            this.btnGhepVoice.OnIdleState.BorderColor = System.Drawing.Color.Black;
+            this.btnGhepVoice.OnIdleState.BorderRadius = 5;
+            this.btnGhepVoice.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnGhepVoice.OnIdleState.BorderThickness = 1;
+            this.btnGhepVoice.OnIdleState.FillColor = System.Drawing.Color.Transparent;
+            this.btnGhepVoice.OnIdleState.ForeColor = System.Drawing.Color.Black;
+            this.btnGhepVoice.OnIdleState.IconLeftImage = null;
+            this.btnGhepVoice.OnIdleState.IconRightImage = null;
+            this.btnGhepVoice.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnGhepVoice.OnPressedState.BorderRadius = 5;
+            this.btnGhepVoice.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnGhepVoice.OnPressedState.BorderThickness = 1;
+            this.btnGhepVoice.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnGhepVoice.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnGhepVoice.OnPressedState.IconLeftImage = null;
+            this.btnGhepVoice.OnPressedState.IconRightImage = null;
+            this.btnGhepVoice.Size = new System.Drawing.Size(60, 25);
+            this.btnGhepVoice.TabIndex = 11;
+            this.btnGhepVoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGhepVoice.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnGhepVoice.TextMarginLeft = 0;
+            this.btnGhepVoice.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnGhepVoice.UseDefaultRadiusAndThickness = true;
+            this.btnGhepVoice.Click += new System.EventHandler(this.btnGhepVoice_Click);
+            // 
             // voice
             // 
             this.voice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.voice.FillWeight = 25.84572F;
             this.voice.HeaderText = "voice";
             this.voice.Image = global::ATextToVoice.Properties.Resources.volume;
             this.voice.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -1024,38 +1123,48 @@ namespace ATextToVoice
             // 
             // idDataGridViewTextBoxColumn1
             // 
+            this.idDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.FillWeight = 60F;
             this.idDataGridViewTextBoxColumn1.HeaderText = "id";
             this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
             this.idDataGridViewTextBoxColumn1.Width = 60;
             // 
             // subDataGridViewTextBoxColumn1
             // 
+            this.subDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.subDataGridViewTextBoxColumn1.DataPropertyName = "sub";
+            this.subDataGridViewTextBoxColumn1.FillWeight = 350F;
             this.subDataGridViewTextBoxColumn1.HeaderText = "sub";
             this.subDataGridViewTextBoxColumn1.Name = "subDataGridViewTextBoxColumn1";
             this.subDataGridViewTextBoxColumn1.Width = 350;
             // 
             // startDataGridViewTextBoxColumn1
             // 
+            this.startDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.startDataGridViewTextBoxColumn1.DataPropertyName = "start";
+            this.startDataGridViewTextBoxColumn1.FillWeight = 175F;
             this.startDataGridViewTextBoxColumn1.HeaderText = "start";
             this.startDataGridViewTextBoxColumn1.Name = "startDataGridViewTextBoxColumn1";
             this.startDataGridViewTextBoxColumn1.Width = 175;
             // 
             // endDataGridViewTextBoxColumn1
             // 
+            this.endDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.endDataGridViewTextBoxColumn1.DataPropertyName = "end";
+            this.endDataGridViewTextBoxColumn1.FillWeight = 175F;
             this.endDataGridViewTextBoxColumn1.HeaderText = "end";
             this.endDataGridViewTextBoxColumn1.Name = "endDataGridViewTextBoxColumn1";
             this.endDataGridViewTextBoxColumn1.Width = 175;
             // 
             // statusDataGridViewTextBoxColumn1
             // 
+            this.statusDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.statusDataGridViewTextBoxColumn1.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn1.FillWeight = 225F;
             this.statusDataGridViewTextBoxColumn1.HeaderText = "status";
             this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
-            this.statusDataGridViewTextBoxColumn1.Width = 175;
+            this.statusDataGridViewTextBoxColumn1.Width = 225;
             // 
             // voiceSubBindingSource
             // 
@@ -1121,13 +1230,14 @@ namespace ATextToVoice
         private System.Windows.Forms.DataGridViewImageColumn audio;
         private AxWMPLib.AxWindowsMediaPlayer mediaPlayer;
         private Bunifu.UI.WinForms.BunifuDataGridView gridSub;
+        private System.Windows.Forms.BindingSource voiceSubBindingSource;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnGhepVoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn subDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewImageColumn voice;
-        private System.Windows.Forms.BindingSource voiceSubBindingSource;
     }
 }
 
